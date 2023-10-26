@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kategoris",
+  "info": {
+    "singularName": "kategori",
+    "pluralName": "kategoris",
+    "displayName": "Kategori"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "product_type": {
+      "type": "enumeration",
+      "enum": [
+        "Hewan",
+        "Medis"
+      ],
+      "required": true
+    },
+    "produk_hewan": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produk-hewan.produk-hewan",
+      "mappedBy": "kategori"
+    },
+    "produk_medis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produk-medis.produk-medis",
+      "mappedBy": "kategori"
+    }
+  }
+}

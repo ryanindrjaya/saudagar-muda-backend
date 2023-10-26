@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produk_medises",
+  "info": {
+    "singularName": "produk-medis",
+    "pluralName": "produk-medises",
+    "displayName": "Produk Medis"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "harga": {
+      "type": "biginteger",
+      "required": true,
+      "min": "0"
+    },
+    "harga_diskon": {
+      "type": "biginteger"
+    },
+    "kode": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "deskripsi": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "kategori": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kategori.kategori",
+      "inversedBy": "produk_medis"
+    }
+  }
+}
