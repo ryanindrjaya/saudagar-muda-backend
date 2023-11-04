@@ -64,6 +64,17 @@
           "localized": true
         }
       }
+    },
+    "offer": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "landing-page.component",
+      "required": false
     }
   }
 }

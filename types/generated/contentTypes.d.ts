@@ -790,6 +790,12 @@ export interface ApiDivisiAnimalDivisiAnimal extends Schema.SingleType {
           localized: true;
         };
       }>;
+    offer: Attribute.Component<'landing-page.component', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -860,6 +866,12 @@ export interface ApiDivisiHumanDivisiHuman extends Schema.SingleType {
       }>;
     offering_description: Attribute.Text &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    offer: Attribute.Component<'landing-page.component', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -948,12 +960,7 @@ export interface ApiProdukHewanProdukHewan extends Schema.CollectionType {
       Attribute.SetMinMax<{
         min: '0';
       }>;
-    harga_agen: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetMinMax<{
-        min: '0';
-      }>;
-    harga_reseller: Attribute.BigInteger &
+    harga: Attribute.BigInteger &
       Attribute.Required &
       Attribute.SetMinMax<{
         min: '0';
